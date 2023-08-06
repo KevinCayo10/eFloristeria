@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MenuData } from "./MenuData";
+import { MenuData, MenuTienda } from "./MenuData";
 import logo from "../assets/icons/DyF_ElRegaloIdeal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,46 +15,68 @@ const Navbar = () => {
   return (
     <div className="app">
       <nav>
-        <div className="max-w-7xl mx-auto bg-red-200">
-          <div className="flex mx-auto justify-between w-5/6  bg-green-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex mx-auto justify-between w-5/6  ">
             {/* Primary menu and logo */}
-            <div className="flex items-center gap-16 my-10 py-2 border-2 w-full">
+            <div className="flex items-center gap-16 my-5 py-2  w-full">
               {/* logo */}
-              <div className="bg-gray-300">
+              <div className="">
                 <a href="/" className="flex gap-1 font-bold  items-center ">
                   <img src={logo} alt="Logo_DF" className="w-[5em] " />
                 </a>
               </div>
               {/* primary */}
-              <div className="hidden lg:flex gap-8 bg-slate-200 ">
+              <div className="hidden lg:flex gap-8">
                 {MenuData.map((item, index) => {
                   return (
-                    <a
-                      href={item.url}
-                      className=" text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c]"
-                    >
-                      {item.title}
-                    </a>
+                    <div className="relative group" key={index}>
+                      <a
+                        href={item.url}
+                        className="text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c]"
+                      >
+                        {item.title}
+                      </a>
+                      {index === MenuData.length - 1 && (
+                        <div className="absolute hidden group-hover:block bg-white shadow-md p-2 mt-1">
+                          {/* Submenu content */}
+                          {MenuTienda.map((item, index) => {
+                            return (
+                              <div className=" " key={index}>
+                                <a
+                                  href={item.url}
+                                  className="text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c]"
+                                >
+                                  {item.title}
+                                </a>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </div>
-              <div className="flex gap-6 items-end  justify-end bg-red-300">
-                <a href="/cart">
+              <div className="flex  gap-10 items-end justify-end ml-auto mx-0">
+                <a href="/cart" className="hover:text-[#fa849c] ">
                   <FontAwesomeIcon icon={faCartShopping} />
                 </a>
-                <a href="/cart">
+                <a href="/user" className="hover:text-[#fa849c]">
                   <FontAwesomeIcon icon={faUser} />
                 </a>
               </div>
             </div>
             {/* secondary */}
-            <div className="flex gap-6">
+            <div className="flex gap-6 ">
               <div className="hidden xs:flex items-center gap-10">
                 <div className="hidden lg:flex items-center gap-2"></div>
               </div>
               {/* Mobile navigation toggle */}
               <div className="lg:hidden flex items-center">
-                <button onClick={() => setToggleMenu(!toggleMenu)}>
+                <button
+                  className="ml-5"
+                  onClick={() => setToggleMenu(!toggleMenu)}
+                >
                   {toggleMenu === true ? (
                     <FontAwesomeIcon icon={faXmark} />
                   ) : (

@@ -24,3 +24,14 @@ export const MenuData = [
     icon: "",
   },
 ];
+
+export const MenuTienda = [
+  {
+    title: "Amor",
+    url: "#",
+  },
+  {
+    title: "Amor",
+    url: "#",
+  },
+];
