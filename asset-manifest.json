@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/eFloristeria/static/css/main.4bb8115a.css",
+    "main.js": "/eFloristeria/static/js/main.52e9577f.js",
+    "static/js/787.708ad4b5.chunk.js": "/eFloristeria/static/js/787.708ad4b5.chunk.js",
+    "static/media/DyF_ElRegaloIdeal.png": "/eFloristeria/static/media/DyF_ElRegaloIdeal.2e312d3340ba01563878.png",
+    "index.html": "/eFloristeria/index.html",
+    "main.4bb8115a.css.map": "/eFloristeria/static/css/main.4bb8115a.css.map",
+    "main.52e9577f.js.map": "/eFloristeria/static/js/main.52e9577f.js.map",
+    "787.708ad4b5.chunk.js.map": "/eFloristeria/static/js/787.708ad4b5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4bb8115a.css",
+    "static/js/main.52e9577f.js"
+  ]
+}
