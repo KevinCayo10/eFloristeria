@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import { SliderData } from "./SliderData";
-import {
-  faChevronCircleLeft,
-  faChevronCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Slider() {
   const [slider, setSlider] = useState(2);
@@ -25,11 +21,11 @@ function Slider() {
       ></div>
       {/*Left arrow */}
       <div className=" absolute top-[50%] -translate-x-0 translate-y-[25%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <FontAwesomeIcon icon={faChevronCircleLeft} onClick={prevSlider} />
+        <FontAwesomeIcon icon="chevron-circle-left" onClick={prevSlider} />
       </div>
       {/*Right arrow */}
       <div className="absolute top-[50%] -translate-x-0 translate-y-[25%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <FontAwesomeIcon icon={faChevronCircleRight} onClick={nextSlider} />
+        <FontAwesomeIcon icon="chevron-circle-right" onClick={nextSlider} />
       </div>
     </div>
   );

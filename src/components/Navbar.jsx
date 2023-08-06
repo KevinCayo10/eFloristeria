@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import { MenuData, MenuTienda } from "./MenuData";
 import logo from "../assets/icons/DyF_ElRegaloIdeal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faCartShopping,
-  faUser,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -59,10 +53,10 @@ const Navbar = () => {
               </div>
               <div className="flex  gap-10 items-end justify-end ml-auto mx-0">
                 <a href="/cart" className="hover:text-[#fa849c] ">
-                  <FontAwesomeIcon icon={faCartShopping} />
+                  <FontAwesomeIcon icon="cart-shopping" />
                 </a>
                 <a href="/user" className="hover:text-[#fa849c]">
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon="user" />
                 </a>
               </div>
             </div>
@@ -77,11 +71,9 @@ const Navbar = () => {
                   className="ml-5"
                   onClick={() => setToggleMenu(!toggleMenu)}
                 >
-                  {toggleMenu === true ? (
-                    <FontAwesomeIcon icon={faXmark} />
-                  ) : (
-                    <FontAwesomeIcon icon={faBars} />
-                  )}
+                  <FontAwesomeIcon
+                    icon={toggleMenu === true ? "xmark" : "bars"}
+                  />
                 </button>
               </div>
             </div>

@@ -6,7 +6,7 @@ function Title(title) {
       <h2 className="text-center font-bold text-xl text-[#383838]">
         {title.title}
       </h2>
-      <p className="text-center font-medium text-[#8e8e8e]">{title.subtitle}</p>
+      <p className="text-center font-sm text-[#8e8e8e]">{title.subtitle}</p>
     </div>
   );
 }
