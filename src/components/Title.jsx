@@ -2,9 +2,11 @@ import React from "react";
 
 function Title(title) {
   return (
-    <div>
-      <h2>{title.title}</h2>
-      <p>{title.subtitle}</p>
+    <div className=" m-3">
+      <h2 className="text-center font-bold text-xl text-[#383838]">
+        {title.title}
+      </h2>
+      <p className="text-center font-medium text-[#8e8e8e]">{title.subtitle}</p>
     </div>
   );
 }

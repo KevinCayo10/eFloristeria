@@ -5,27 +5,25 @@ import { faCartPlus, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 function CardProduct() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 max-w-7xl mx-auto gap-2 bg-gray-400">
+    <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 w-[80%] sm:max-w-7xl mx-auto gap-2 ">
       {Products.map((item, index) => {
         return (
-          // Card
           <div
-            className="w-full p-2  rounded-xl transform transition-all hover:translate-y-1 duration-200 shadow-lg hover:shadow-xl"
+            className="w-5/6 p-2 m-auto rounded-xl transform transition-all hover:translate-y-1 duration-200 shadow-lg hover:shadow-xl "
             key={item.id}
           >
-            {/* Image card */}
-            <img
-              src={item.img}
-              alt=""
-              className="max-h-60 w-full object-cover rounded-2xl"
-            />
-            {/* Header */}
-            <h2 className="font-bold text-lg">{item.id}</h2>
-            <div className="bg-gray-200 flex justify-between">
-              {/* Description */}
-              <p className="text-sm text-gray-500 ">$ {item.price}</p>
-              {/* Cart */}
-              <FontAwesomeIcon icon={faCartPlus} />
+            <div className="flex flex-col items-center">
+              {/* Agregamos una clase flex y centrado vertical */}
+              <img
+                src={item.img}
+                alt=""
+                className="w-full  object-cover rounded-2xl" // Ajustamos el tamaño de la imagen
+              />
+              <h2 className="font-bold text-lg">{item.id}</h2>
+              <div className=" flex-col ">
+                <p className="text-sm text-gray-500">$ {item.price}</p>
+                <FontAwesomeIcon icon={faCartPlus} className="mx-2" />
+              </div>
             </div>
           </div>
         );
