@@ -1,11 +1,11 @@
 import React from "react";
-import { Products } from "./Product";
+import { Products } from "../data/Product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 function CardProduct() {
   return (
-    <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 w-[80%] sm:max-w-7xl mx-auto gap-2 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-[80%] sm:max-w-7xl mx-auto gap-2 ">
       {Products.map((item, index) => {
         return (
           <div

@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Slider from "./components/Slider";
 import Title from "./components/Title";
 import "./assets/FontAwesomeIcons/icons";
+import CardDuty from "./components/CardDuty";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -26,7 +28,17 @@ function App() {
           title="Nuestros compromisos"
           subtitle="Creando momentos con detalles únicos"
         />
+        <CardDuty />
       </section>
+      <section>
+        <Title
+          title="Diversidad de selección"
+          subtitle="Explora una amplia gama de opcinoes para cada gusto"
+        />
+      </section>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MenuData, MenuTienda } from "./MenuData";
+import { MenuData, MenuTienda } from "../data/MenuData";
 import logo from "../assets/icons/DyF_ElRegaloIdeal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -87,9 +87,13 @@ const Navbar = () => {
         >
           <div className="px-8">
             <div className="flex flex-col gap-8 font-bold tracking-wider">
-              <a href="#" className="border-l-4 border-gray-600">
-                Features
-              </a>
+              {MenuData.map((item, index) => {
+                return (
+                  <a href={item.url} className="border-gray-600">
+                    {item.title}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SliderData } from "./SliderData";
+import { SliderData } from "../data/SliderData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Slider() {
   const [slider, setSlider] = useState(2);
