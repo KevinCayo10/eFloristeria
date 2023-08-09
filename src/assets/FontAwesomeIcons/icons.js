@@ -1,5 +1,10 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+  faFacebookF,
+  faTiktok,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import {
   faCartPlus,
   faCartShopping,
   faGift,
@@ -24,5 +29,8 @@ library.add(
   faChevronCircleRight,
   faSpa,
   faGift,
-  faPeopleCarryBox
+  faPeopleCarryBox,
+  faFacebookF,
+  faTiktok,
+  faWhatsapp
 );

@@ -5,10 +5,10 @@ export const RedesData = [
   },
   {
     url: "https://www.tiktok.com/@neidatipan",
-    icon: "",
+    icon: "fa-brands fa-tiktok",
   },
   {
     url: "https://wa.me/593999160223",
-    icon: "",
+    icon: "fa-brands fa-whatsapp",
   },
 ];
