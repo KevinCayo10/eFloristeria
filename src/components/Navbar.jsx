@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MenuData, MenuTienda } from "../data/MenuData";
 import logo from "../assets/icons/DyF_ElRegaloIdeal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -15,33 +16,33 @@ const Navbar = () => {
             <div className="flex items-center gap-16 my-5 py-2  w-full">
               {/* logo */}
               <div className="">
-                <a href="/" className="flex gap-1 font-bold  items-center ">
+                <Link to="/" className="flex gap-1 font-bold  items-center ">
                   <img src={logo} alt="Logo_DF" className="w-[5em] " />
-                </a>
+                </Link>
               </div>
               {/* primary */}
               <div className="hidden lg:flex gap-8">
                 {MenuData.map((item, index) => {
                   return (
                     <div className="relative group" key={index}>
-                      <a
-                        href={item.url}
+                      <Link
+                        to={item.url}
                         className="text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c]"
                       >
                         {item.title}
-                      </a>
+                      </Link>
                       {index === MenuData.length - 1 && (
                         <div className="absolute hidden group-hover:block bg-white shadow-md p-2 mt-1">
                           {/* Submenu content */}
                           {MenuTienda.map((item, index) => {
                             return (
                               <div className=" " key={index}>
-                                <a
-                                  href={item.url}
+                                <Link
+                                  to={item.url}
                                   className="text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c]"
                                 >
                                   {item.title}
-                                </a>
+                                </Link>
                               </div>
                             );
                           })}
@@ -89,9 +90,13 @@ const Navbar = () => {
             <div className="flex flex-col gap-8 font-bold tracking-wider">
               {MenuData.map((item, index) => {
                 return (
-                  <a href={item.url} className="border-gray-600">
+                  <Link
+                    to={item.url}
+                    clLinkssNLinkme="border-gray-600"
+                    onClick={() => setToggleMenu(!toggleMenu)}
+                  >
                     {item.title}
-                  </a>
+                  </Link>
                 );
               })}
             </div>

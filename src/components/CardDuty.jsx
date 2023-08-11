@@ -8,7 +8,7 @@ const CardDuty = () => {
       {DutyData.map((item, index) => {
         return (
           <div
-            className="w-5/6 h-[260px] sm:h-[320px] lg:h-[260px] p-2 m-auto rounded-xl transform transition-all hover:translate-y-1 duration-200 shadow-lg hover:shadow-xl "
+            className="w-5/6 h-[240px] sm:h-[310px] lg:h-[260px] p-2 m-auto rounded-xl transform transition-all hover:translate-y-1 duration-200 shadow-lg hover:shadow-xl "
             key={index}
           >
             <div className="flex-col  h-full">

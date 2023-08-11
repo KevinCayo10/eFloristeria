@@ -1,25 +1,25 @@
 export const MenuData = [
   {
     title: "Inicio",
-    url: "#",
+    url: "/",
     cName: "navLinks",
     icon: "",
   },
   {
     title: "Nosotros",
-    url: "#",
+    url: "/about",
     cName: "navLinks",
     icon: "",
   },
   {
     title: "Contactos",
-    url: "#",
+    url: "/contact",
     cName: "navLinks",
     icon: "",
   },
   {
     title: "Tienda",
-    url: "#",
+    url: "/shop",
     cName: "navLinks",
     icon: "",
   },

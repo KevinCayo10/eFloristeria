@@ -12,6 +12,7 @@ const Footer = () => {
             <div
               className="h-[40px] w-[40px]  text-white hover:bg-[#ffff]  
             hover:text-[#FA849C] border-2 rounded-full  mx-2  flex justify-center items-center"
+              key={index}
             >
               <a href={item.url} target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={item.icon} size="lg" />

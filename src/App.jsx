@@ -1,42 +1,28 @@
 import "./App.css";
-import ButtonsPlus from "./components/ButtonsPlus";
-import CardProduct from "./components/CardProduct";
 import Navbar from "./components/Navbar";
-import Slider from "./components/Slider";
-import Title from "./components/Title";
-import "./assets/FontAwesomeIcons/icons";
-import CardDuty from "./components/CardDuty";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Contact from "./views/Contact";
+import Home from "./views/Home";
+import About from "./views/About";
 import Footer from "./components/Footer";
+import Product from "./views/Product";
+import "./assets/FontAwesomeIcons/icons";
+import Shop from "./views/Shop";
 
 function App() {
   return (
     <div className="">
-      <Navbar />
-      <section>
-        <Slider />
-      </section>
-      <section className="">
-        <Title
-          title="Más populares"
-          subtitle="Detalles que hablan: Flores que expresan lo que las palabras no pueden"
-        />
-        <CardProduct />
-        <ButtonsPlus url="/tienda" title="Ver más" />
-      </section>
-      <section>
-        <Title
-          title="Nuestros compromisos"
-          subtitle="Creando momentos con detalles únicos"
-        />
-        <CardDuty />
-      </section>
-      <section>
-        <Title
-          title="Diversidad de selección"
-          subtitle="Explora una amplia gama de opcinoes para cada gusto"
-        />
-      </section>
-      <footer>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/producto/:id" element={<Product />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shop" element={<Shop />} />
+        </Routes>
+      </BrowserRouter>
+      <footer className="mt-0.5">
         <Footer />
       </footer>
     </div>
