@@ -1,46 +1,58 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { Link } from "react-router-dom";
-import { Products } from "../data/Product";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
 import Banner from "../components/Banner";
+import FilterProduct from "../components/FilterProduct";
+import Title from "../components/Title";
+import CardProduct from "../components/CardProduct";
+import { useEffect } from "react";
+import ProductService from "../services/ProductServices";
 
 function Shop() {
-  // Funcion para filtrar
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    ProductService.getProducts()
+      .then((data) => {
+        setProductos(data);
+      })
+      .catch((error) => {
+        console.error("Error en la petición getProducts:", error);
+      });
+  }, []);
+
+  const handleCategoryFilter = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProducts =
+    selectedCategory === "All"
+      ? productos
+      : productos.filter((product) => product.categoria === selectedCategory);
 
   return (
-    <div>
+    <div className="bg-green-200">
       <div>
         <Banner
           title={"Tienda"}
           description={"Aqui encontraras los mejores detalles"}
         ></Banner>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-[80%] sm:max-w-7xl mx-auto gap-2 my-10 ">
-        {Products.map((item, index) => {
-          return (
-            <div
-              className="w-5/6 p-2 m-auto rounded-xl transform transition-all hover:translate-y-1 duration-200 shadow-lg hover:shadow-xl "
-              key={item.id}
-            >
-              <div className="flex flex-col items-center">
-                {/* Agregamos una clase flex y centrado vertical */}
-                <img
-                  src={item.img}
-                  alt=""
-                  className="w-full  object-cover rounded-2xl" // Ajustamos el tamaño de la imagen
-                />
-                <Link to={`/producto/${item.id}`}>
-                  <h2 className="font-bold text-lg">{item.id}</h2>
-                </Link>
-                <div className=" flex-col ">
-                  <p className="text-sm text-gray-500">$ {item.price}</p>
-                  <FontAwesomeIcon icon={faCartPlus} className="mx-2" />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      <div className="grid grid-cols-1 lg:grid-cols-12 w-[80%] m-auto bg-red-300">
+        <div className="lg:col-span-9 w-full sm:max-w-7xl mx-auto my-5 bg-red-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-7xl mx-auto gap-2 my-5 bg-red-200">
+            {filteredProducts.map((item, index) => {
+              return <CardProduct producto={item} />;
+            })}
+          </div>
+        </div>
+
+        <div className="lg:col-span-3 p-4 bg-blue-100">
+          <Title title="Categorías" align="left" />
+          <FilterProduct
+            selectedCategory={selectedCategory}
+            onSelectCategory={handleCategoryFilter}
+          />
+        </div>
       </div>
     </div>
   );

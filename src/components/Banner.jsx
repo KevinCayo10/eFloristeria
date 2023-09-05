@@ -4,7 +4,7 @@ const backgroundImage = require("../assets/images/banner.jpg");
 function Banner({ title, description }) {
   return (
     <div
-      className=" w-[80%] m-auto h-20 flex flex-col justify-center items-center "
+      className=" w-[80%] m-auto h-20 flex flex-col justify-center items-center rounded-2xl "
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",

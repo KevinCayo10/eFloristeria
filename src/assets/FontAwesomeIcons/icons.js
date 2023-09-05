@@ -7,6 +7,8 @@ import {
 import {
   faCartPlus,
   faCartShopping,
+  faCircleMinus,
+  faCirclePlus,
   faGift,
   faPeopleCarryBox,
   faSpa,
@@ -32,5 +34,7 @@ library.add(
   faPeopleCarryBox,
   faFacebookF,
   faTiktok,
-  faWhatsapp
+  faWhatsapp,
+  faCirclePlus,
+  faCircleMinus
 );

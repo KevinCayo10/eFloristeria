@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
 
+  const handleMenuItemClick = (index) => {
+    setActiveMenuItem(index);
+  };
   return (
     <div className="app">
       <nav>
@@ -27,7 +31,10 @@ const Navbar = () => {
                     <div className="relative group" key={index}>
                       <Link
                         to={item.url}
-                        className="text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c]"
+                        className={`text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c] ${
+                          activeMenuItem === index ? "text-[#fa849c]" : ""
+                        }`}
+                        onClick={() => handleMenuItemClick(index)}
                       >
                         {item.title}
                       </Link>
@@ -39,7 +46,7 @@ const Navbar = () => {
                               <div className=" " key={index}>
                                 <Link
                                   to={item.url}
-                                  className="text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c]"
+                                  className={`text-[#8e8e8e] hover:text-[#fa849c]  `}
                                 >
                                   {item.title}
                                 </Link>
@@ -92,8 +99,15 @@ const Navbar = () => {
                 return (
                   <Link
                     to={item.url}
-                    clLinkssNLinkme="border-gray-600"
-                    onClick={() => setToggleMenu(!toggleMenu)}
+                    className={`border-gray-600 ${
+                      activeMenuItem === index
+                        ? "text-[#fa849c]"
+                        : "text-[#8e8e8e]"
+                    }`}
+                    onClick={() => {
+                      setToggleMenu(!toggleMenu);
+                      handleMenuItemClick(index);
+                    }}
                   >
                     {item.title}
                   </Link>
