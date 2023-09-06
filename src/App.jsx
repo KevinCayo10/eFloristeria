@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Product from "./views/Product";
 import "./assets/FontAwesomeIcons/icons";
 import Shop from "./views/Shop";
+import CardCartProduct from "./components/CardCartProduct";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<CardCartProduct />} />
         </Routes>
       </BrowserRouter>
       <footer className="mt-0.5">

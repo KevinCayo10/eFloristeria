@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenuData, MenuTienda } from "../data/MenuData";
 import logo from "../assets/icons/DyF_ElRegaloIdeal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,10 +7,32 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState(null);
+  const [orderNumber, setOrderNumber] = useState(0);
 
   const handleMenuItemClick = (index) => {
     setActiveMenuItem(index);
   };
+  useEffect(() => {
+    const updateOrderNumber = () => {
+      try {
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        setOrderNumber(carrito.length);
+      } catch (error) {
+        console.error("Error al obtener el carrito de compras:", error);
+      }
+    };
+
+    // Actualizar orderNumber cuando cambie localStorage
+    window.addEventListener("storage", updateOrderNumber);
+
+    // Obtener el valor inicial de orderNumber
+    updateOrderNumber();
+
+    // Limpiar el evento del escuchador cuando se desmonte el componente
+    return () => {
+      window.removeEventListener("storage", updateOrderNumber);
+    };
+  }, []);
   return (
     <div className="app">
       <nav>
@@ -60,8 +82,13 @@ const Navbar = () => {
                 })}
               </div>
               <div className="flex  gap-10 items-end justify-end ml-auto mx-0">
-                <a href="/cart" className="hover:text-[#fa849c] ">
+                <a href="/cart" className="hover:text-[#fa849c] flex flex-row ">
                   <FontAwesomeIcon icon="cart-shopping" />
+                  <div className="w-4 h-4 bg-[#fa849c] rounded-full">
+                    <p className="text-[0.7em] text-center font-bold text-white">
+                      {orderNumber}
+                    </p>
+                  </div>
                 </a>
                 <a href="/user" className="hover:text-[#fa849c]">
                   <FontAwesomeIcon icon="user" />

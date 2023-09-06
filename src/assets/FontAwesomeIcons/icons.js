@@ -36,5 +36,6 @@ library.add(
   faTiktok,
   faWhatsapp,
   faCirclePlus,
-  faCircleMinus
+  faCircleMinus,
+  faXmark
 );
