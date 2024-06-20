@@ -10,14 +10,19 @@ import {
   faCircleMinus,
   faCirclePlus,
   faGift,
+  faLocationDot,
   faPeopleCarryBox,
   faSpa,
-} from "@fortawesome/free-solid-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faBars, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
-import {
   faChevronCircleLeft,
   faChevronCircleRight,
+  faBars,
+  faUser,
+  faXmark,
+  faArrowRight,
+  faPhone,
+  faMobile,
+  faCalendarDay,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -37,5 +42,10 @@ library.add(
   faWhatsapp,
   faCirclePlus,
   faCircleMinus,
-  faXmark
+  faXmark,
+  faLocationDot,
+  faPhone,
+  faMobile,
+  faCalendarDay,
+  faEnvelope
 );

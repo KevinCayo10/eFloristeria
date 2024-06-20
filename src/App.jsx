@@ -23,10 +23,8 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<CardCartProduct />} />
         </Routes>
-      </BrowserRouter>
-      <footer className="mt-0.5">
         <Footer />
-      </footer>
+      </BrowserRouter>
     </div>
   );
 }
