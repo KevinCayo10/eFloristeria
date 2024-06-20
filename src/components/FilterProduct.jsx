@@ -12,7 +12,7 @@ function FilterProduct({ selectedCategory, onSelectCategory }) {
   }, []);
 
   return (
-    <div className="border-2">
+    <div className="">
       {category.map((item, index) => {
         console.log(item.categoria);
         return (
@@ -20,12 +20,10 @@ function FilterProduct({ selectedCategory, onSelectCategory }) {
             key={item.id_cate}
             onClick={() => onSelectCategory(item.categoria)}
             className={`cursor-pointer ${
-              item.category === selectedCategory
-                ? "text-black"
-                : "text-green-300"
+              item.category === selectedCategory ? "text-black" : ""
             }`}
           >
-            - {item.categoria}
+            {item.categoria}
           </h3>
         );
       })}

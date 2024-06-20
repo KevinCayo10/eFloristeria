@@ -13,7 +13,6 @@ function CardCartProduct() {
       (product) => product.id_pro !== item.id_pro
     );
     setCarrito(carritoUpdate);
-    setOrderNumber(carritoUpdate.length);
     localStorage.setItem("carrito", JSON.stringify(carritoUpdate));
   };
   return (

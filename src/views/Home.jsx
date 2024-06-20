@@ -24,8 +24,9 @@ function Home() {
 
   return (
     <div>
-      <section>
-        <Slider />
+      <section className="">
+        <div className=""></div>
+        <div className=""></div>
       </section>
       <section className="my-20">
         <Title

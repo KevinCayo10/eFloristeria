@@ -53,7 +53,7 @@ const Navbar = () => {
                     <div className="relative group" key={index}>
                       <Link
                         to={item.url}
-                        className={`text-[#8e8e8e] hover:text-[#fa849c] active:text-[#fa849c] ${
+                        className={`text-gray-600 hover:text-[#fa849c] active:text-[#fa849c] ${
                           activeMenuItem === index ? "text-[#fa849c]" : ""
                         }`}
                         onClick={() => handleMenuItemClick(index)}
@@ -68,7 +68,7 @@ const Navbar = () => {
                               <div className=" " key={index}>
                                 <Link
                                   to={item.url}
-                                  className={`text-[#8e8e8e] hover:text-[#fa849c]  `}
+                                  className={`text-gray-700 hover:text-[#fa849c]  `}
                                 >
                                   {item.title}
                                 </Link>
