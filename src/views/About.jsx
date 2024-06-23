@@ -1,7 +1,10 @@
 import React from "react";
 import Banner from "../components/Banner";
-import image from "../assets/images/arreglos.jpg";
-
+import Counter from "../components/Counter";
+import { infoData, teamData, valuesData } from "../data/HomeData";
+import CardsEffect from "../components/CardsEffect";
+import about from "../assets/images/about.webp";
+import about_section from "../assets/images/about_section.webp";
 function About() {
   return (
     <div>
@@ -10,50 +13,119 @@ function About() {
         description={"Aquí encontraras la historía"}
       ></Banner>
 
-      <section className="flex flex-col sm:flex-row justify-center items-center gap-8 mt-5 w-[80%] m-auto  bg-gray-200">
-        <div className="w-full sm:w-1/2">
-          <h2 className="text-2xl font-bold text-center">Historia</h2>
-          <p className="text-center text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            voluptatibus, quidem, dolores, quae accusantium voluptates
-            repudiandae quod quos nemo nesciunt consequuntur. Quisquam
-            voluptatibus, quidem, dolores, quae accusantium voluptates
-            repudiandae quod quos nemo nesciunt consequuntur. Quisquam
-            voluptatibus, quidem, dolores, quae accusantium voluptates
-          </p>
-        </div>
-        <div className="w-full sm:w-1/2 flex flex-row bg-green-500 gap-5">
-          <div className="w-2/3 flex flex-col gap-y-3  bg-red-500 ">
-            <div className="w-[125px] h-[125px] ">
-              <img
-                src={image}
-                alt=""
-                className="w-full h-full object-cover rounded-xl"
-              />
+      <section class="py-4 ">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 ">
+          <div class="items-center gap-8   md:grid md:grid-cols-2 xl:gap-16">
+            <div class="text-gray-500 sm:text-lg ">
+              <h6 className="text-pink-400">
+                Detalles y Floristeria El Regalo Ideal
+              </h6>
+              <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 ">
+                Quienes somos
+              </h2>
+              <p class="mb-8 font-light lg:text-xl">
+                Somos Detalles y Floristería El Regalo Ideal, una empresa con 5
+                años de experiencia en la venta y entrega de flores y regalos a
+                domicilio en Puerto Quito. Nos dedicamos a crear momentos
+                inolvidables con nuestros hermosos arreglos florales y detalles
+                personalizados.
+              </p>
+
+              <p class="mb-8 font-light lg:text-xl">
+                Las flores siempre hacen que la gente sea mejor y más feliz, son
+                sol y medicina para el alma. En Detalles y Floristería El Regalo
+                Ideal, estamos aquí para ayudarte a celebrar la vida y sus
+                momentos especiales con belleza y estilo. ¡Gracias por confiar
+                en nosotros!
+              </p>
             </div>
-            <div className="w-[125px] h-[125px]">
-              <img
-                src={image}
-                alt=""
-                className="w-full h-full object-cover rounded-xl"
-              />
-            </div>
-          </div>
-          <div className="w-1/3  object-cover rounded-xl bg-yellow-400">
-            <img src={image} alt="" />
+            <img
+              class="w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+              src={about}
+              alt="dashboard feature image"
+            />
           </div>
         </div>
       </section>
-      <section className="w-[80%] m-auto mt-5">
-        <div className="rounded-full shadow-md flex flex-row justify-around">
-          <div>
-            <p>1</p>
+      <section className="py-0 sm:py-4">
+        <div className="max-w-screen-xl px-4 py-8 mx-auto  lg:px-6 ">
+          <div className="row mx-0 rounded-[20px] bg-gray-50 px-10 shadow-lg lg:py-10 grid grid-cols-1 sm:grid-cols-3 gap-2 ">
+            {infoData.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="px-10 py-5 text-center sm:col-6 lg:col-3 lg:py-0"
+                >
+                  <Counter target={item.target} color={item.color} />
+                  <p className="font-light lg:text-xl">{item.title}</p>
+                </div>
+              );
+            })}
           </div>
-          <div>
-            <p>2</p>
+        </div>
+      </section>
+      <section className="py-4">
+        <div class="relative max-w-screen-xl mx-auto py-2 sm:py-4 ">
+          <div className="text-center">
+            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 ">
+              Nuestros valores
+            </h2>
+            <p className="mb-8 font-light lg:text-xl">
+              En Detalles y Floristería El Regalo Ideal, nuestros valores
+              fundamentales guían cada aspecto de nuestro negocio:
+            </p>
           </div>
-          <div>
-            <p>3</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-2">
+            {valuesData.map((item, key) => (
+              <div key={key} className="flex justify-center">
+                <CardsEffect
+                  title={item.title}
+                  description={item.description}
+                  color={item.color}
+                  icon={item.icon}
+                  key={item.id}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Imagen */}
+      <section className="h-auto py-4">
+        <div>
+          <img
+            src={about_section}
+            alt=""
+            className="w-full max-h-80 object-cover"
+          />
+        </div>
+      </section>
+
+      {/* Equipo */}
+      <section className="py-4">
+        <div class="relative max-w-screen-xl mx-auto py-2 sm:py-4 ">
+          <div className="text-center">
+            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
+              Nuestro Equipo
+            </h2>
+            <p className="mb-8 text-lg leading-relaxed text-gray-700">
+              En Detalles y Floristería El Regalo Ideal, nos inspiramos en
+              nuestros valores fundamentales que orientan cada aspecto de
+              nuestro trabajo:
+            </p>
+          </div>
+          <div className="flex flex-col gap-4  justify-center px-2 sm:flex-row">
+            {teamData.map((item, key) => (
+              <div key={key} className="flex justify-center">
+                <CardsEffect
+                  title={item.title}
+                  description={item.description}
+                  color={item.color}
+                  icon={item.icon}
+                  key={item.id}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

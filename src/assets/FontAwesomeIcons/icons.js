@@ -23,6 +23,9 @@ import {
   faMobile,
   faCalendarDay,
   faEnvelope,
+  faStar,
+  faRocket,
+  faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -47,5 +50,9 @@ library.add(
   faPhone,
   faMobile,
   faCalendarDay,
-  faEnvelope
+  faEnvelope,
+  faStar,
+  faGift,
+  faRocket,
+  faTruck
 );
