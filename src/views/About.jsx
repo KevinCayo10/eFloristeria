@@ -14,7 +14,7 @@ function About() {
       ></Banner>
 
       <section class="py-4 ">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 ">
+        <div class="max-w-screen-xl px-4 py-4 mx-auto lg:px-6 ">
           <div class="items-center gap-8   md:grid md:grid-cols-2 xl:gap-16">
             <div class="text-gray-500 sm:text-lg ">
               <h6 className="text-pink-400">
@@ -49,7 +49,7 @@ function About() {
       </section>
       <section className="py-0 sm:py-4">
         <div className="max-w-screen-xl px-4 py-8 mx-auto  lg:px-6 ">
-          <div className="row mx-0 rounded-[20px] bg-gray-50 px-10 shadow-lg lg:py-10 grid grid-cols-1 sm:grid-cols-3 gap-2 ">
+          <div className="row mx-0 rounded-2xl bg-gray-50 px-10 shadow-lg lg:py-10 grid grid-cols-1 sm:grid-cols-3 gap-2 ">
             {infoData.map((item, index) => {
               return (
                 <div

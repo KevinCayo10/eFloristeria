@@ -26,6 +26,7 @@ import {
   faStar,
   faRocket,
   faTruck,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -54,5 +55,6 @@ library.add(
   faStar,
   faGift,
   faRocket,
-  faTruck
+  faTruck,
+  faPaperPlane
 );

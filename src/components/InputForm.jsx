@@ -12,7 +12,7 @@ function InputForm({
   return (
     <div className="mb-4">
       <input
-        className="p-2 border rounded-md w-full "
+        className="p-2 border rounded-md w-full  font-light lg:text-xl"
         type={inputType}
         id={inputId}
         name={inputName}
