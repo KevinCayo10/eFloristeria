@@ -5,6 +5,7 @@ import { infoData, teamData, valuesData } from "../data/HomeData";
 import CardsEffect from "../components/CardsEffect";
 import about from "../assets/images/about.webp";
 import about_section from "../assets/images/about_section.webp";
+import Title from "../components/Title";
 function About() {
   return (
     <div>
@@ -67,13 +68,12 @@ function About() {
       <section className="py-4">
         <div class="relative max-w-screen-xl mx-auto py-2 sm:py-4 ">
           <div className="text-center">
-            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 ">
-              Nuestros valores
-            </h2>
-            <p className="mb-8 font-light lg:text-xl">
-              En Detalles y Floristería El Regalo Ideal, nuestros valores
-              fundamentales guían cada aspecto de nuestro negocio:
-            </p>
+            <Title
+              title="Nuestros valores"
+              subtitle="  En Detalles y Floristería El Regalo Ideal, nuestros valores
+              fundamentales guían cada aspecto de nuestro negocio:"
+              aling="center"
+            />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-2">
             {valuesData.map((item, key) => (
@@ -105,14 +105,13 @@ function About() {
       <section className="py-4">
         <div class="relative max-w-screen-xl mx-auto py-2 sm:py-4 ">
           <div className="text-center">
-            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
-              Nuestro Equipo
-            </h2>
-            <p className="mb-8 text-lg leading-relaxed text-gray-700">
-              En Detalles y Floristería El Regalo Ideal, nos inspiramos en
+            <Title
+              title="Nuestro Equipo"
+              subtitle="En Detalles y Floristería El Regalo Ideal, nos inspiramos en
               nuestros valores fundamentales que orientan cada aspecto de
-              nuestro trabajo:
-            </p>
+              nuestro trabajo:"
+              aling="center"
+            />
           </div>
           <div className="flex flex-col gap-4  justify-center px-2 sm:flex-row">
             {teamData.map((item, key) => (

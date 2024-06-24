@@ -3,7 +3,7 @@ import React from "react";
 
 function CardsEffect({ title, description, color, icon, image, key }) {
   return (
-    <div className="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10 h-full shadow-lg ">
+    <div className="group relative  overflow-hidden bg-white px-6 pt-10 pb-8 ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm rounded-2xl sm:px-10 h-full shadow-lg ">
       <span className="absolute top-0 left-0 right-0 bottom-0 flex items-center h-1 w-full bg-pink-500 transition-all duration-300 group-hover:scale-[500] "></span>
       <div className="relative z-10 mx-auto max-w-md flex flex-col items-center justify-center text-center ">
         <span className="grid h-20 w-20 place-items-center rounded-full bg-pink-500 transition-all duration-300 group-hover:bg-pink-400">

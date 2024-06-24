@@ -34,7 +34,7 @@ function Contact() {
         </div>
       </div>
       <div className="flex flex-col  lg:flex-row lg:gap-5  mt-5 mb-5  max-w-screen-xl px-4 py-8 mx-auto  lg:px-6 ">
-        <div className="w-full  lg:w-1/2 border rounded-md shadow-sm p-5 bg-gray-100 ">
+        <div className="w-full  lg:w-1/2 border rounded-2xl shadow-sm p-5 bg-gray-100 ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189461.8462166307!2d-79.41698447145447!3d0.13631015875863983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2aaf0d38063f87%3A0x4310ca1de0c75b10!2sDETALLES%20Y%20FLORISTERIA%20EL%20REGALO%20IDEAL!5e0!3m2!1ses-419!2sec!4v1716707787387!5m2!1ses-419!2sec"
             width="600"
@@ -45,7 +45,7 @@ function Contact() {
             className="w-full"
           ></iframe>
         </div>
-        <div className="w-full lg:w-1/2 border rounded-md shadow-sm mt-5 p-5 lg:mt-0">
+        <div className="w-full lg:w-1/2 border rounded-2xl shadow-sm mt-5 p-5 lg:mt-0">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
             Formulario de contacto
           </h2>
@@ -90,7 +90,7 @@ function Contact() {
 
               <button
                 type="submit"
-                className="border rounded-full my-4 py-2 px-4 bg-pink-600 text-white hover:bg-pink-400 font-light lg:text-xl "
+                className="border rounded-full my-4 py-2 px-4 bg-pink-600 text-white hover:bg-pink-500 font-light lg:text-xl "
               >
                 Enviar
                 <FontAwesomeIcon
