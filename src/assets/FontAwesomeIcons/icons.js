@@ -62,5 +62,6 @@ library.add(
   faPaperPlane,
   faEye,
   faHeartRegular,
-  faHearSolid
+  faHearSolid,
+  faWhatsapp
 );

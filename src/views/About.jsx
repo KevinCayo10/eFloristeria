@@ -8,7 +8,7 @@ import about_section from "../assets/images/about_section.webp";
 import Title from "../components/Title";
 function About() {
   return (
-    <div>
+    <div className="mt-32">
       <Banner
         title={"Nosotros"}
         description={"Aquí encontraras la historía"}
@@ -66,7 +66,7 @@ function About() {
         </div>
       </section>
       <section className="py-4">
-        <div class="relative max-w-screen-xl mx-auto py-2 sm:py-4 ">
+        <div class="relative max-w-screen-xl px-4 py-8 mx-auto  lg:px-6  ">
           <div className="text-center">
             <Title
               title="Nuestros valores"
@@ -75,7 +75,7 @@ function About() {
               aling="center"
             />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ">
             {valuesData.map((item, key) => (
               <div key={key} className="flex justify-center">
                 <CardsEffect

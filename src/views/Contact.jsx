@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import InputForm from "../components/InputForm";
 function Contact() {
   return (
-    <section>
+    <section className="mt-32">
       <Banner
         title={"Contactos"}
         description={

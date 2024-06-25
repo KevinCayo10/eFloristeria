@@ -5,16 +5,15 @@ import ButtonsPlus from "../components/ButtonsPlus";
 import CardDuty from "../components/CardDuty";
 import CardCategory from "../components/CardCategory";
 import "../App.css";
-// import { Products } from "../data/Product";
 import ProductService from "../services/ProductServices";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DutyData } from "../data/DutyData";
 import { Category } from "../data/Product";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import home from "../assets/images/home.png";
+import home from "../assets/images/bg005.jpeg";
 import { NextArrow, PrevArrow } from "../components/utils/Arrows";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -52,12 +51,27 @@ function Home() {
 
   return (
     <div>
-      <section className="">
-        <div className="w-full border flex ">
-          <div className="w-1/3">
-            <h1>holla</h1>
+      <section
+        className="relative h-screen bg-cover bg-center flex items-center justify-start "
+        style={{ backgroundImage: `url(${home})` }}
+      >
+        <div className="max-w-screen-xl px-4 py-4 mx-auto   lg:px-6 text-white  items-center  text-center justify-center">
+          <div className="w-full md:w-1/2  flex flex-col justify-center items-center m-auto">
+            <h1 className="text-4xl font-extrabold mb-0 text-white">
+              El Regalo Ideal
+            </h1>
+            <h2 className="text-2xl mb-2">Detalles y Floristería</h2>
+            <p className="mb-4 text-xl">
+              Bienvenido a{" "}
+              <span className="font-semibold text-xl">El Regalo Ideal</span>, tu
+              destino perfecto para detalles personalizados, arreglos florales
+              espectaculares, peluches encantadores y mucho más.
+            </p>
+            <button className="rounded-full my-4 py-2 px-4 bg-pink-600 text-white hover:bg-pink-500 font-light lg:text-xl">
+              Ver detalles
+              <FontAwesomeIcon icon="fa-solid fa-eye" className="px-2" />
+            </button>
           </div>
-          <img src={home} alt="" class />
         </div>
       </section>
       <section className="my-20">

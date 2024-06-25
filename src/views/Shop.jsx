@@ -30,16 +30,16 @@ function Shop() {
       : productos.filter((product) => product.categoria === selectedCategory);
 
   return (
-    <div className="">
+    <div className="mt-32">
       <div>
         <Banner
           title={"Tienda"}
           description={"Aqui encontraras los mejores detalles"}
         ></Banner>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-12 w-[80%] m-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12  max-w-screen-xl px-4 py-4 mx-auto  lg:px-6">
         <div className="lg:col-span-9 w-full sm:max-w-7xl mx-auto my-5 ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-7xl mx-auto gap-2 my-5 ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 sm:max-w-7xl mx-auto gap-2 my-5 ">
             {filteredProducts.map((item, index) => {
               return <CardProduct producto={item} />;
             })}

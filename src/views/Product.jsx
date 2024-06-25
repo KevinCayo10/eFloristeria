@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Banner from "../components/Banner";
-import DetailsProduct from "../components/DetailsProduct";
 import ProductService from "../services/ProductServices";
+import DetailsProduct from "../components/DetailsProduct";
 
 function Product() {
   const id = useParams().id;
@@ -18,13 +18,13 @@ function Product() {
   }, [id]);
   console.log(product);
   return (
-    <div>
-      <div>
+    <div className="mt-32">
+      <section>
         <Banner title={`Detalle ${product.id_pro}`} />
-      </div>
-      <div>
+      </section>
+      <section>
         <DetailsProduct product={product} />
-      </div>
+      </section>
     </div>
   );
 }
