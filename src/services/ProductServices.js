@@ -1,7 +1,7 @@
-import API from "../api/axios";
+import API from "./api/axios";
 
-const ProductService = {
-  getProducts: async () => {
+class ProductService {
+  static async getProducts() {
     try {
       const response = await API.get(`/productos/`);
       const products = await response.data;
@@ -9,9 +9,9 @@ const ProductService = {
     } catch (error) {
       throw error; // Lanza el error para manejarlo en el componente
     }
-  },
+  }
 
-  getProductsOrders: async () => {
+  static async getProductsOrders() {
     try {
       const response = await API.get(`/productos/order/`);
       const products = await response.data;
@@ -19,16 +19,17 @@ const ProductService = {
     } catch (error) {
       throw error; // Lanza el error para manejarlo en el componente
     }
-  },
+  }
 
-  getProductDetail: async (id) => {
+  static async getProductDetail(id) {
     try {
+      console.log("get producto id : ", id);
       const response = await API.get(`/productos/${id}`);
       const product = await response.data;
       return product;
     } catch (error) {
       throw error;
     }
-  },
-};
+  }
+}
 export default ProductService;

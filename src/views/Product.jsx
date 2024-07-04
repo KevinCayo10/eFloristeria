@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Banner from "../components/Banner";
-import ProductService from "../services/ProductServices";
+import Banner from "../components/Shared/Banner";
 import DetailsProduct from "../components/DetailsProduct";
+import ProductService from "../services/ProductServices";
 
 function Product() {
-  const id = useParams().id;
+  const { id } = useParams(); // Obtener el ID directamente aquí
   const [product, setProduct] = useState({});
+
   useEffect(() => {
-    ProductService.getProductDetail(id)
-      .then((result) => {
-        setProduct(result[0]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log("Inside useEffect, PRODUCT ID 2: ", id);
+
+    if (id) {
+      ProductService.getProductDetail(id)
+        .then((result) => {
+          console.log("CATEGORIAS SERVICE  : : ", result.categorias.nom_cate);
+          setProduct(result);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   }, [id]);
-  console.log(product);
+
   return (
     <div className="mt-32">
       <section>
         <Banner title={`Detalle ${product.id_pro}`} />
       </section>
       <section>
-        <DetailsProduct product={product} />
+        {product.categorias && (
+          <DetailsProduct product={product} categoria={product.categorias} />
+        )}
       </section>
     </div>
   );

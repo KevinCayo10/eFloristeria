@@ -8,11 +8,13 @@ function InputForm({
   inputName,
   placeholderText,
   arialLabelName,
+  register,
 }) {
   return (
     <div className="mb-4">
       <input
-        className="p-2 border rounded-md w-full  font-light lg:text-xl"
+        {...register(inputId)}
+        className="p-2 border rounded-md w-full  font-light lg:text-base"
         type={inputType}
         id={inputId}
         name={inputName}

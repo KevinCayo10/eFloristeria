@@ -6,24 +6,24 @@ function FilterProduct({ selectedCategory, onSelectCategory }) {
 
   useEffect(() => {
     CategoryServices.getCategories().then((result) => {
-      console.log(result);
-      setCategory(result);
+      console.log("Categorias : ", result);
+      const categoriesWithAll = [{ id_cate: 0, nom_cate: "All" }, ...result];
+      setCategory(categoriesWithAll);
     });
   }, []);
 
   return (
     <div className="">
       {category.map((item, index) => {
-        console.log(item.categoria);
         return (
           <h3
             key={item.id_cate}
-            onClick={() => onSelectCategory(item.categoria)}
+            onClick={() => onSelectCategory(item.nom_cate)}
             className={`cursor-pointer ${
-              item.category === selectedCategory ? "text-black" : ""
+              item.nom_cate === selectedCategory ? "text-black" : ""
             }`}
           >
-            {item.categoria}
+            {item.nom_cate}
           </h3>
         );
       })}

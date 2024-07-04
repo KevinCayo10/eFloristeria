@@ -1,9 +1,14 @@
 import React from "react";
-import Banner from "../components/Banner";
+import Banner from "../components/Shared/Banner";
 import { Comunicate } from "../data/RedesData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import InputForm from "../components/InputForm";
+import InputForm from "../components/Shared/InputForm";
+import { useForm } from "react-hook-form";
 function Contact() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <section className="mt-32">
       <Banner
@@ -50,10 +55,11 @@ function Contact() {
             Formulario de contacto
           </h2>
           <div className="pt-5">
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col gap-y-4 sm:flex-row sm:gap-4  ">
                 <div className="flex-1 sm:w-1/2">
                   <InputForm
+                    register={register}
                     inputType="text"
                     inputName="names"
                     placeholderText="Nombres completos"
@@ -63,6 +69,7 @@ function Contact() {
                 </div>
                 <div className="flex-1 sm:w-1/2">
                   <InputForm
+                    register={register}
                     inputType="text"
                     inputName="phone"
                     placeholderText="Número de celular"
@@ -72,6 +79,7 @@ function Contact() {
                 </div>
               </div>
               <InputForm
+                register={register}
                 inputType="text"
                 inputName="email"
                 placeholderText="Email"
@@ -80,6 +88,7 @@ function Contact() {
               />
 
               <textarea
+                {...register("message")}
                 placeholder="Mensaje"
                 cols={10}
                 rows={6}

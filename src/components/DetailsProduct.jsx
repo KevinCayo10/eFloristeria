@@ -1,20 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Magnifier } from "./utils/Magnifier";
 
-function DetailsProduct({ product }) {
+function DetailsProduct({ product, categoria }) {
   const [number, setNumber] = useState(1);
 
   const whatsappHandles = () => {
     const message =
       `Hola, estoy interesado en el siguiente producto: \n\n` +
       `ID: ${product.id_pro}\n` +
-      `Precio: ${product.pre_pro}\n` +
+      `Precio: ${product.prec_pro}\n` +
       `Imagen: ${product.img_pro}\n`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/+593999160223?text=${encodedMessage}`, "_blank");
     window.open(`https://wa.me/+593999160223?text=${message}`, "_blank");
   };
+  useEffect(() => {
+    console.log("CATEGORIA : ", categoria);
+  }, []);
   return (
     <div className=" flex flex-col md:flex-row max-w-screen-xl px-4 py-4 mx-auto lg:px-6  m-auto  gap-6 justify-center">
       {/* sección de la imagen */}
@@ -32,7 +35,7 @@ function DetailsProduct({ product }) {
           {product.id_pro}
         </h2>
         <p className="font-bold text-xl text-pink-600 mb-4 ">
-          ${product.pre_pro}
+          ${product.prec_pro}
         </p>
         <p className=" font-light lg:text-xl mb-4">{product.desc_pro}</p>
         {/* Comprar 1 o mas */}
@@ -79,7 +82,7 @@ function DetailsProduct({ product }) {
           </div>
         </div>
         <p className="font-light lg:text-xl  py-2">
-          <span>Categoría:</span> {product.categoria}
+          <span>Categoría:</span> {categoria.nom_cate}
         </p>
         <button
           className="bg-green-600 hover:bg-green-500 text-white font-light lg:text-xl   px-4 rounded-full py-2 w-1/2"

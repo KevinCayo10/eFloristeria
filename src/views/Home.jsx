@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Title from "../components/Title";
+import Title from "../components/Shared/Title";
 import CardProduct from "../components/CardProduct";
 import ButtonsPlus from "../components/ButtonsPlus";
 import CardDuty from "../components/CardDuty";

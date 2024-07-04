@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Banner from "../components/Banner";
+import Banner from "../components/Shared/Banner";
 import FilterProduct from "../components/FilterProduct";
-import Title from "../components/Title";
+import Title from "../components/Shared/Title";
 import CardProduct from "../components/CardProduct";
 import { useEffect } from "react";
 import ProductService from "../services/ProductServices";
@@ -22,12 +22,15 @@ function Shop() {
 
   const handleCategoryFilter = (category) => {
     setSelectedCategory(category);
+    console.log("Categoria seleccionada : ", selectedCategory);
   };
 
   const filteredProducts =
     selectedCategory === "All"
       ? productos
-      : productos.filter((product) => product.categoria === selectedCategory);
+      : productos.filter(
+          (product) => product.categorias.nom_cate === selectedCategory
+        );
 
   return (
     <div className="mt-32">
@@ -39,7 +42,7 @@ function Shop() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-12  max-w-screen-xl px-4 py-4 mx-auto  lg:px-6">
         <div className="lg:col-span-9 w-full sm:max-w-7xl mx-auto my-5 ">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 sm:max-w-7xl mx-auto gap-2 my-5 ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 sm:max-w-7xl mx-auto gap-6 my-5 ">
             {filteredProducts.map((item, index) => {
               return <CardProduct producto={item} />;
             })}

@@ -30,6 +30,7 @@ import {
   faPaperPlane,
   faEye,
   faHeart as faHearSolid,
+  faCircleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -63,5 +64,6 @@ library.add(
   faEye,
   faHeartRegular,
   faHearSolid,
-  faWhatsapp
+  faWhatsapp,
+  faCircleExclamation
 );

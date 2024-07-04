@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-10">
       <div className="max-w-screen-xl px-4  mx-auto lg:px-6   ">
-        <div className="flex mx-auto justify-between w-full  ">
+        <div className="flex mx-auto justify-between  w-full  ">
           {/* Primary menu and logo */}
           <div className="flex items-center gap-16 my-5 py-2  w-full">
             {/* logo */}
@@ -80,7 +80,7 @@ const Navbar = () => {
                 );
               })}
             </div>
-            <div className="flex  gap-10 items-end justify-end ml-auto mx-0">
+            <div className="flex  gap-10 items-end justify-end items-center ml-auto mx-0">
               <a href="/cart" className="hover:text-[#fa849c] flex flex-row ">
                 <FontAwesomeIcon icon="cart-shopping" />
                 <div className="w-4 h-4 bg-[#fa849c] rounded-full">
@@ -89,8 +89,11 @@ const Navbar = () => {
                   </p>
                 </div>
               </a>
-              <a href="/user" className="hover:text-[#fa849c]">
-                <FontAwesomeIcon icon="user" />
+              <a
+                href="/login"
+                className="hover:text-[#fa849c] border rounded-full border-pink-400 py-1 px-3"
+              >
+                Login / Register <FontAwesomeIcon icon="user" />
               </a>
             </div>
           </div>

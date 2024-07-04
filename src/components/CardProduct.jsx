@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function CardProduct({ producto }) {
   const [compra, setCompra] = useState(false);
-
+  console.log("PRODUCTO CARD PRODUCTO : ", producto.id);
   const handleAddToCart = () => {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     let numOrden = 1;
@@ -31,7 +31,7 @@ function CardProduct({ producto }) {
             <Link
               className="bg-white border rounded-full text-pink-500 font-light lg:text-x flex items-center justify-center w-10 h-10"
               title="Detallar"
-              to={`/producto/${producto.id_pro}`}
+              to={`/product/${producto.id_pro}`}
             >
               <FontAwesomeIcon icon="fa-solid fa-eye" />
             </Link>
@@ -52,9 +52,9 @@ function CardProduct({ producto }) {
         </div>
         <div className="flex flex-col justify-center items-center py-2 sm:py-4">
           <h5 className="font-medium lg:text-x text-pink-600 ">
-            {producto.categoria} * {producto.id_pro}
+            {producto.categorias.nom_cate} * {producto.id_pro}
           </h5>
-          <p className="font-bold lg:text-x  ">${producto.pre_pro}</p>
+          <p className="font-bold lg:text-x  ">${producto.prec_pro}</p>
         </div>
       </div>
     </div>

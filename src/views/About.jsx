@@ -1,11 +1,11 @@
 import React from "react";
-import Banner from "../components/Banner";
+import Banner from "../components/Shared/Banner";
 import Counter from "../components/Counter";
 import { infoData, teamData, valuesData } from "../data/HomeData";
 import CardsEffect from "../components/CardsEffect";
 import about from "../assets/images/about.webp";
 import about_section from "../assets/images/about_section.webp";
-import Title from "../components/Title";
+import Title from "../components/Shared/Title";
 function About() {
   return (
     <div className="mt-32">

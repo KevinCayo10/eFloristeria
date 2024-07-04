@@ -1,7 +1,7 @@
-import API from "../api/axios";
+import API from "./api/axios";
 
-const CategoryServices = {
-  getCategories: async () => {
+class CategoryServices {
+  static async getCategories() {
     try {
       const response = await API.get(`/categorias/`);
       const products = await response.data;
@@ -9,6 +9,6 @@ const CategoryServices = {
     } catch (error) {
       throw error; // Lanza el error para manejarlo en el componente
     }
-  },
-};
+  }
+}
 export default CategoryServices;
