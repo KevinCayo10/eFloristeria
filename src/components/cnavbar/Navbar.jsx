@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { MenuData, MenuTienda } from "../data/MenuData";
-import logo from "../assets/icons/DyF_ElRegaloIdeal.png";
+import React, { useContext, useEffect, useState } from "react";
+import { MenuData, MenuTienda } from "../../data/MenuData";
+import logo from "../../assets/icons/DyF_ElRegaloIdeal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../routes/AuthProvider";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState(null);
   const [orderNumber, setOrderNumber] = useState(0);
-
+  const { user } = useContext(AuthContext);
   const handleMenuItemClick = (index) => {
     setActiveMenuItem(index);
   };
@@ -34,11 +35,11 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-10">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-10 ">
       <div className="max-w-screen-xl px-4  mx-auto lg:px-6   ">
         <div className="flex mx-auto justify-between  w-full  ">
           {/* Primary menu and logo */}
-          <div className="flex items-center gap-16 my-5 py-2  w-full">
+          <div className="flex items-center gap-16 my-3 py-2  w-full">
             {/* logo */}
             <div className="">
               <Link to="/" className="flex gap-1 font-bold  items-center ">
@@ -52,7 +53,7 @@ const Navbar = () => {
                   <div className="relative group" key={index}>
                     <Link
                       to={item.url}
-                      className={`text-gray-600 hover:text-[#fa849c] active:text-[#fa849c] font-light lg:text-xl ${
+                      className={`text-gray-600 hover:text-pink-500 active:text-[#fa849c] font-normal lg:text-lg ${
                         activeMenuItem === index ? "text-[#fa849c]" : ""
                       }`}
                       onClick={() => handleMenuItemClick(index)}
@@ -81,20 +82,30 @@ const Navbar = () => {
               })}
             </div>
             <div className="flex  gap-10 items-end justify-end items-center ml-auto mx-0">
-              <a href="/cart" className="hover:text-[#fa849c] flex flex-row ">
+              <a href="/carrito" className="hover:text-pink-500 flex flex-row ">
                 <FontAwesomeIcon icon="cart-shopping" />
-                <div className="w-4 h-4 bg-[#fa849c] rounded-full">
+                <div className="w-4 h-4 bg-pink-500 rounded-full">
                   <p className="text-[0.7em] text-center font-bold text-white">
                     {orderNumber}
                   </p>
                 </div>
               </a>
-              <a
-                href="/login"
-                className="hover:text-[#fa849c] border rounded-full border-pink-400 py-1 px-3"
-              >
-                Login / Register <FontAwesomeIcon icon="user" />
-              </a>
+
+              {user == null ? (
+                <a
+                  href="/login"
+                  className="hover:text-pink-500 border rounded-full border-pink-400 py-1 px-3"
+                >
+                  Login / Register <FontAwesomeIcon icon="user" />
+                </a>
+              ) : (
+                <a
+                  href="/cuenta"
+                  className="hover:text-pink-500 border rounded-full border-pink-400 py-1 px-3"
+                >
+                  Mi cuenta <FontAwesomeIcon icon="user" />
+                </a>
+              )}
             </div>
           </div>
           {/* secondary */}

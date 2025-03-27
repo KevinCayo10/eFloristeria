@@ -4,7 +4,10 @@ import {
   faTiktok,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
+import {
+  faChartBar,
+  faHeart as faHeartRegular,
+} from "@fortawesome/free-regular-svg-icons";
 import {
   faCartPlus,
   faCartShopping,
@@ -31,6 +34,11 @@ import {
   faEye,
   faHeart as faHearSolid,
   faCircleExclamation,
+  faSquarePollVertical,
+  faIcons,
+  faBoxesStacked,
+  faUsers,
+  faUserLock,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -65,5 +73,11 @@ library.add(
   faHeartRegular,
   faHearSolid,
   faWhatsapp,
-  faCircleExclamation
+  faCircleExclamation,
+  faSquarePollVertical,
+  faIcons,
+  faBoxesStacked,
+  faUsers,
+  faUserLock,
+  faChartBar
 );

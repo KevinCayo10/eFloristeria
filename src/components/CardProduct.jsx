@@ -31,7 +31,7 @@ function CardProduct({ producto }) {
             <Link
               className="bg-white border rounded-full text-pink-500 font-light lg:text-x flex items-center justify-center w-10 h-10"
               title="Detallar"
-              to={`/product/${producto.id_pro}`}
+              to={`/producto/${producto.id_pro}`}
             >
               <FontAwesomeIcon icon="fa-solid fa-eye" />
             </Link>

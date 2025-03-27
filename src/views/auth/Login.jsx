@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import InputForm from "../../components/Shared/InputForm";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import AuthService from "../../services/AuthService";
 import Validate from "../../utils/validate";
 import image from "../../assets/images/amarilla.webp";
-
+import { AuthContext } from "../../routes/AuthProvider";
 function Login() {
   const { register, handleSubmit } = useForm();
-
+  const { login } = useContext(AuthContext);
   const onSubmit = (data) => {
     if (!Validate.isPassword(data.pass_usu)) {
       console.log("Contraseña correcta");
     }
     AuthService.login(data)
       .then((response) => {
-        console.log(response);
+        login(response.data.user, response.data.token);
       })
       .catch((e) => {
         console.log(e);
@@ -94,7 +94,7 @@ function Login() {
                   <p>Si no tienes una cuenta...</p>
                   <Link
                     class="py-2 px-5 ml-3 bg-white border rounded-xl hover:scale-110 duration-300 border-pink-400  "
-                    to="/register"
+                    to="/registro"
                   >
                     Registrarse
                   </Link>

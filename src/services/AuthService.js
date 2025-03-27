@@ -3,7 +3,7 @@ import API from "./api/axios";
 class AuthService {
   static async login(user) {
     try {
-      const response = await API.post("/auth/login/", user);
+      const response = await API.post("usuarios/auth/login/", user);
       const data = await response.data;
       return data;
     } catch (error) {
@@ -13,7 +13,7 @@ class AuthService {
 
   static async register(user) {
     try {
-      const response = await API.post("/auth/register/", user);
+      const response = await API.post("usuarios/auth/register/", user);
       const data = await response.data;
       return data;
     } catch (error) {

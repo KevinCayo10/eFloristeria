@@ -9,25 +9,26 @@ import "./assets/FontAwesomeIcons/icons";
 import Shop from "./views/Shop";
 import CardCartProduct from "./components/CardCartProduct";
 import Login from "./views/auth/Login";
-import { AuthProvider } from "./context/AuthProvider";
+import { AuthContext, AuthProvider } from "./routes/AuthProvider";
 import Register from "./views/auth/Register";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/cnavbar/Navbar";
+import { AdminRoutesProtected } from "./routes/ProtectedRoutes";
+import { useContext } from "react";
+import { AuthProtectedRoute } from "./routes/ProtectedRoute";
 
 function App() {
   return (
-    <div className="">
-      <BrowserRouter>
-        <AuthProvider>
-          <Layout />
-        </AuthProvider>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <Layout />
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
 function Layout() {
   const location = useLocation();
-  const noHeaderFooterPaths = ["/admin"];
+  const noHeaderFooterPaths = ["/admin/panel"];
   const shouldShowHeaderFooter = !noHeaderFooterPaths.some((path) =>
     location.pathname.startsWith(path)
   );
@@ -36,13 +37,19 @@ function Layout() {
       {shouldShowHeaderFooter && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/cart" element={<CardCartProduct />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/producto/:id" element={<Product />} />
+        <Route path="/contactos" element={<Contact />} />
+        <Route path="/nosotros" element={<About />} />
+        <Route path="/tienda" element={<Shop />} />
+        <Route path="/carrito" element={<CardCartProduct />} />
+        {/* Proteger las rutas cuando se logea */}
+        <Route path="/login" element={<AuthProtectedRoute element={Login} />} />
+        <Route
+          path="/registro"
+          element={<AuthProtectedRoute element={Register} />}
+        />
+        {/* Rutas protegidas */}
+        <Route path="/*" element={<AdminRoutesProtected />} />
       </Routes>
       {shouldShowHeaderFooter && <Footer />}
     </>

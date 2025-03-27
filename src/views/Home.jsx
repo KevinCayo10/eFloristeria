@@ -86,7 +86,7 @@ function Home() {
               return <CardProduct producto={item} />;
             })}
           </div>
-          <ButtonsPlus url="/shop" title="Ver más" />
+          <ButtonsPlus url="/tienda" title="Ver más" />
         </div>
       </section>
       <section className="my-4">

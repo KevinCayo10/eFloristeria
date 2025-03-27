@@ -1,15 +1,11 @@
 export const CategoryData = [
   {
-    id: 1,
-    category: "All",
-  },
-  {
     id: 2,
-    category: "Amor y Amistad",
+    category: "Amor y amistad",
   },
   {
     id: 3,
-    category: "Feliz Cumpleaños",
+    category: "Felíz cumpleaños",
   },
   {
     id: 4,
